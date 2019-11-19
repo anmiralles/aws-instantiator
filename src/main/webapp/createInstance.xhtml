@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>AWS Instantiator</title>
+</h:head>
+<h:body>
+    <p:outputPanel>
+        <ui:insert name="header">
+            <ui:include src="/WEB-INF/common/header.xhtml" />
+        </ui:insert>
+        <div class="ui-g">
+            <div class="ui-g-2"></div>
+            <div class="ui-g-8">
+                <h1 style="text-align: center">Create a new instance</h1>
+                <p:panel id="instance" header="Enter instance data:"
+                         style="margin-bottom:20px">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <h:form>
+                            <p:growl id="growl" life="5000" showDetail="true" />
+
+                            <h:panelGrid columns="2" cellpadding="5">
+
+                                <p:outputLabel for="awsUser" value="Access Key Id:" />
+                                <p:inputText id="awsUser" value="#{instanceCreationBean.awsUser}" style="width: 220px"
+                                             required="true" />
+
+                                <p:outputLabel for="awsSecret" value="Secret Access Key:" />
+                                <p:password id="awsSecret" value="#{instanceCreationBean.awsSecret}" style="width: 220px"
+                                             required="true" />
+
+                                <p:outputLabel for="awsName" value="Instance Name:" />
+                                <p:inputText id="awsName" value="#{instanceCreationBean.awsName}" style="width: 220px"
+                                             required="true" />
+                            </h:panelGrid>
+
+                            <p:commandButton value="Create instance"
+                                             action="#{instanceCreationBean.createInstance}" icon="pi pi-check"
+                                             update="@form"/>
+                        </h:form>
+                    </h:panelGrid>
+                </p:panel>
+            </div>
+            <div class="ui-g-2" />
+        </div>
+        <ui:insert name="footer">
+            <ui:include src="/WEB-INF/common/footer.xhtml" />
+        </ui:insert>
+    </p:outputPanel>
+</h:body>
+</html>

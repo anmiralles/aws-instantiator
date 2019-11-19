@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition>
+		<h:form id="hearderForm">
+			<p:growl id="messages" showSummary="true" showDetail="true" />
+
+			<p:menubar>
+				<p:menuitem value="Home" icon="pi pi-home" url="/index.xhtml">
+				</p:menuitem>
+
+				<p:menuitem value="Instances" icon="pi pi-users"
+							url="/instances.xhtml">
+				</p:menuitem>
+
+				<p:menuitem value="Create Instance" icon="pi pi-shopping-cart"
+							url="/createInstance.xhtml">
+				</p:menuitem>
+
+				<f:facet name="options">
+					<p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search" />
+					<p:commandButton type="button" value="Logout" icon="pi pi-home" />
+				</f:facet>
+			</p:menubar>
+		</h:form>
+	</ui:composition>
+</body>
+</html>
